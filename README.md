@@ -57,14 +57,21 @@ Of course, this is only relevant for developers; all going well, end users shoul
 
 ## Available libraries
 
-Currently available libraries include:
-
-- [**byteme**](https://github.com/LTLA/byteme): lightweight file readers/writers
-- [**aarand**](https://github.com/LTLA/aarand): random distribution functions
-- [**kmeans**](https://github.com/LTLA/CppKmeans): Hartigan-Wong or Lloyd k-means 
-- [**Annoy**](https://github.com/spotify/Annoy): approximate nearest neighbor search
-- [**hnswlib**](https://github.com/nmslib/hnswlib): more approximate nearest neighbor search
-- [**knncolle**](https://github.com/LTLA/knncolle): common interface to neighbor search algorithms
+| Name | Description |
+|------|-------------|
+| [**byteme**](https://github.com/LTLA/byteme) | Lightweight file readers/writers |
+| [**aarand**](https://github.com/LTLA/aarand) | Random distribution functions |
+| [**powerit**](https://github.com/LTLA/powerit) | Power iterations |
+| [**kmeans**](https://github.com/LTLA/CppKmeans) | Hartigan-Wong or Lloyd k-means |
+| [**Annoy**](https://github.com/spotify/Annoy) | Approximate nearest neighbor search |
+| [**hnswlib**](https://github.com/nmslib/hnswlib) | Approximate nearest neighbor search |
+| [**knncolle**](https://github.com/LTLA/knncolle) | Common interface to neighbor search algorithms |
+| [**tatami**](https://github.com/tatami-inc/tatami) | Interface for matrix representations |
+| [**qdtsne**](https://github.com/LTLA/qdtsne) | Visualiation with t-SNE |
+| [**umappp**](https://github.com/LTLA/umappp) | Visualization with UMAP |
+| [**Eigen**](https://gitlab.com/libeigen/eigen) | Matrix operations and linear algebra | 
+| [**irlba**](https://github.com/LTLA/CppIrlba) | Approximate SVD via IRLBA |
+| [**WeightedLowess**](https://github.com/LTLA/CppWeightedLowess) | Trend fitting via weighted LOWESS |
 
 The exact versions of each library can be found in [`extern/fetch.sh`](extern/fetch.sh).
 

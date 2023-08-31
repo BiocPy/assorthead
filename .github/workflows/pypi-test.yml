@@ -29,7 +29,15 @@ jobs:
           python -m pip install --upgrade pip
           pip install flake8 pytest tox
 
+      - name: Cache sources
+        id: cache-sources
+        uses: actions/cache@v3
+        with:
+          path: extern/sources
+          key: ${{ runner.os }}-${{ hashFiles('extern/fetch.sh') }}
+
       - name: Fetch C++ dependencies
+        if: steps.cache-primes.outputs.cache-sources != 'true'
         run: | 
           cd extern
           ./fetch.sh
@@ -45,7 +53,15 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
+      - name: Cache sources
+        id: cache-sources
+        uses: actions/cache@v3
+        with:
+          path: extern/sources
+          key: ${{ runner.os }}-${{ hashFiles('extern/fetch.sh') }}
+
       - name: Fetch C++ dependencies
+        if: steps.cache-primes.outputs.cache-sources != 'true'
         run: | 
           cd extern
           ./fetch.sh

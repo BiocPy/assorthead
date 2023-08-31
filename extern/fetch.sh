@@ -44,6 +44,24 @@ transplant_headers kmeans/include/kmeans
 fetch_simple byteme https://github.com/LTLA/byteme v1.0.1
 transplant_headers byteme/include/byteme
 
+fetch_simple tatami https://github.com/tatami-inc/tatami v2.0.2
+transplant_headers tatami/include/tatami
+
+fetch_simple weightedlowess https://github.com/LTLA/CppWeightedLowess v1.0.1
+transplant_headers weightedlowess/include/WeightedLowess
+
+fetch_simple umappp https://github.com/LTLA/umappp f2928b3018e9dc374fbe4553769f899e575e2f14
+transplant_headers umappp/include/umappp
+
+fetch_simple qdtsne https://github.com/LTLA/qdtsne c18897e65ed28cb9c2768ec1edd6a9c1d2f20103
+transplant_headers qdtsne/include/qdtsne
+
+fetch_simple irlba https://github.com/LTLA/CppIrlba 15d6399fc2c9c2ed4755fa0baef373c086fdedd1
+transplant_headers irlba/include/irlba
+
+fetch_simple eigen https://gitlab.com/libeigen/eigen 3.4.0
+transplant_headers eigen/Eigen
+
 # Fetch + CMake, when a repository requires a CMake configuration
 # to reorganize the headers into the right locations for consumption.
 # This also handles transitive dependencies.
@@ -63,7 +81,7 @@ fetch_cmake() {
     cd -
 }
 
-fetch_cmake knncolle https://github.com/LTLA/knncolle master
+fetch_cmake knncolle https://github.com/LTLA/knncolle 3ad6b8cdbd281d78c77390d5a6ded4513bdf3860
 transplant_headers knncolle/include/knncolle
 transplant_headers knncolle/build/_deps/annoy-build/include/annoy
 transplant_headers knncolle/build/_deps/hnswlib-src/hnswlib
