@@ -9,22 +9,23 @@ transplant_headers() {
     local src=$1
     dest=$includedir/$(basename $src)
     rm -rf $dest
-    cp -r $src $dest
+    cp -r sources/$src $dest
 }
 
 # Simple fetching, when a submodule can be directly added and the
 # header files are directly available from the repository.
 
+mkdir -p sources
 fetch_simple() {
     local name=$1
     local url=$2
     local version=$3
 
-    if [ ! -e $name ]
+    if [ ! -e sources/$name ]
     then
-        git submodule add $url $name
+        git clone $url sources/$name
     else
-        cd $name
+        cd sources/$name
         git fetch --all
         git checkout $version
         cd -
@@ -54,7 +55,7 @@ fetch_cmake() {
 
     fetch_simple $name $url $version
 
-    cd $name
+    cd sources/$name
     if [ ! -e build ]
     then
         cmake -S . -B build
