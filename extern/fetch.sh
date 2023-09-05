@@ -62,6 +62,9 @@ transplant_headers irlba/include/irlba
 fetch_simple eigen https://gitlab.com/libeigen/eigen 3.4.0
 transplant_headers eigen/Eigen
 
+fetch_simple singlepp https://github.com/LTLA/singlepp 1d9869c3f050521a12b3151c89bc41906bf093e0
+transplant_headers singlepp/include/singlepp
+
 # Fetch + CMake, when a repository requires a CMake configuration
 # to reorganize the headers into the right locations for consumption.
 # This also handles transitive dependencies.
