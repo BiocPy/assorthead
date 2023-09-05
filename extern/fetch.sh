@@ -38,7 +38,7 @@ transplant_headers aarand/include/aarand
 fetch_simple powerit https://github.com/LTLA/powerit v1.0.0
 transplant_headers powerit/include/powerit
 
-fetch_simple kmeans https://github.com/LTLA/CppKmeans v1.0.0
+fetch_simple kmeans https://github.com/LTLA/CppKmeans v2.0.0
 transplant_headers kmeans/include/kmeans
 
 fetch_simple byteme https://github.com/LTLA/byteme v1.0.1
