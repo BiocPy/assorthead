@@ -65,6 +65,9 @@ transplant_headers eigen/Eigen
 fetch_simple singlepp https://github.com/LTLA/singlepp 1d9869c3f050521a12b3151c89bc41906bf093e0
 transplant_headers singlepp/include/singlepp
 
+fetch_simple scran https://github.com/LTLA/libscran 1bb7cd7f2898073f40005086c740316fe5d7442e
+transplant_headers scran/include/scran
+
 # Fetch + CMake, when a repository requires a CMake configuration
 # to reorganize the headers into the right locations for consumption.
 # This also handles transitive dependencies.
