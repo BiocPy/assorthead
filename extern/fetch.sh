@@ -44,7 +44,7 @@ transplant_headers kmeans/include/kmeans
 fetch_simple byteme https://github.com/LTLA/byteme v1.0.1
 transplant_headers byteme/include/byteme
 
-fetch_simple tatami https://github.com/tatami-inc/tatami v2.1.0
+fetch_simple tatami https://github.com/tatami-inc/tatami v2.1.1
 transplant_headers tatami/include/tatami
 
 fetch_simple weightedlowess https://github.com/LTLA/CppWeightedLowess v1.0.1
