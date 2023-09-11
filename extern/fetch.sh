@@ -68,6 +68,9 @@ transplant_headers singlepp/include/singlepp
 fetch_simple scran https://github.com/LTLA/libscran 1bb7cd7f2898073f40005086c740316fe5d7442e
 transplant_headers scran/include/scran
 
+fetch_simple mnncorrect https://github.com/LTLA/CppMnnCorrect 5ba5c790f01b3a676420892151791786dfb0a8d6
+transplant_headers mnncorrect/include/mnncorrect
+
 # Fetch + CMake, when a repository requires a CMake configuration
 # to reorganize the headers into the right locations for consumption.
 # This also handles transitive dependencies.

@@ -72,6 +72,7 @@ Of course, this is only relevant for developers; all going well, end users shoul
 | [**Eigen**](https://gitlab.com/libeigen/eigen) | Matrix operations and linear algebra | 
 | [**irlba**](https://github.com/LTLA/CppIrlba) | Approximate SVD via IRLBA |
 | [**WeightedLowess**](https://github.com/LTLA/CppWeightedLowess) | Trend fitting via weighted LOWESS |
+| [**mnncorrect**](https://github.com/LTLA/CppMnnCorrect) | Batch correction with MNNs |
 
 The exact versions of each library can be found in [`extern/fetch.sh`](extern/fetch.sh).
 
