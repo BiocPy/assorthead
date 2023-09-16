@@ -56,7 +56,7 @@ transplant_headers umappp/include/umappp
 fetch_simple qdtsne https://github.com/LTLA/qdtsne c18897e65ed28cb9c2768ec1edd6a9c1d2f20103
 transplant_headers qdtsne/include/qdtsne
 
-fetch_simple irlba https://github.com/LTLA/CppIrlba 15d6399fc2c9c2ed4755fa0baef373c086fdedd1
+fetch_simple irlba https://github.com/LTLA/CppIrlba bace9baf758ad396c3d1b8d2d090eb92891aee45
 transplant_headers irlba/include/irlba
 
 fetch_simple eigen https://gitlab.com/libeigen/eigen 3.4.0
@@ -65,7 +65,7 @@ transplant_headers eigen/Eigen
 fetch_simple singlepp https://github.com/LTLA/singlepp 1d9869c3f050521a12b3151c89bc41906bf093e0
 transplant_headers singlepp/include/singlepp
 
-fetch_simple scran https://github.com/LTLA/libscran 1bb7cd7f2898073f40005086c740316fe5d7442e
+fetch_simple scran https://github.com/LTLA/libscran 5843f79562a6522414337871370086db37986454
 transplant_headers scran/include/scran
 
 fetch_simple mnncorrect https://github.com/LTLA/CppMnnCorrect 5ba5c790f01b3a676420892151791786dfb0a8d6
