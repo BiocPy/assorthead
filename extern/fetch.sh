@@ -65,7 +65,7 @@ transplant_headers eigen/Eigen
 fetch_simple singlepp https://github.com/LTLA/singlepp 1d9869c3f050521a12b3151c89bc41906bf093e0
 transplant_headers singlepp/include/singlepp
 
-fetch_simple scran https://github.com/LTLA/libscran 5843f79562a6522414337871370086db37986454
+fetch_simple scran https://github.com/LTLA/libscran b543aaa53e7b0a894a8a54cc634bd2a0e8e089f1
 transplant_headers scran/include/scran
 
 fetch_simple mnncorrect https://github.com/LTLA/CppMnnCorrect 5ba5c790f01b3a676420892151791786dfb0a8d6
