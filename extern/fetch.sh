@@ -71,6 +71,9 @@ transplant_headers scran/include/scran
 fetch_simple mnncorrect https://github.com/LTLA/CppMnnCorrect 5ba5c790f01b3a676420892151791786dfb0a8d6
 transplant_headers mnncorrect/include/mnncorrect
 
+fetch_simple rds2cpp https://github.com/LTLA/rds2cpp v1.1.0
+transplant_headers rds2cpp/include/rds2cpp
+
 # Fetch + CMake, when a repository requires a CMake configuration
 # to reorganize the headers into the right locations for consumption.
 # This also handles transitive dependencies.
