@@ -1,2 +1,2 @@
 recursive-include src/assorthead/include *
-recursive-exclude extern/sources *
+recursive-include src/assorthead/licenses *

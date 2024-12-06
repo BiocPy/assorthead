@@ -55,4 +55,7 @@ MANIFEST
 
 # Other stuff
 src/assorthead/include
-extern/sources/
+extern/_sources/
+extern/_versions/
+include/
+licenses/
