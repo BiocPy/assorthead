@@ -14,8 +14,12 @@
 
 **assorthead** vendors an assortment of header-only C++ libraries for compilation of downstream packages.
 This centralizes the acquisition and versioning of these libraries for a smoother development experience.
-It is primarily intended for the various [**BiocPy**](https://github.com/BiocPy) packages with C++ extensions,
-e.g., [**scranpy**](https://github.com/BiocPy/scranpy), [**singler**](https://github.com/BiocPy/singler).
+Downstream dependencies include
+[**mattress**](https://github.com/tatami-inc/mattress),
+[**knncolle**](https://github.com/knncolle/knncolle-py),
+[**scranpy**](https://github.com/libscran/scranpy)
+and [**singler**](https://github.com/SingleR-inc/singler),
+to name a few.
 
 Developers can install **assorthead** via the usual `pip` commands:
 
@@ -23,8 +27,7 @@ Developers can install **assorthead** via the usual `pip` commands:
 pip install assorthead
 ```
 
-We can then add all headers to the compiler's search path, 
-using the `include_dirs` argument in the `setup()` command in our `setup.py`:
+We add all headers to the compiler's search path using the `include_dirs` argument in the `setup()` command in our `setup.py`:
 
 ```python
 setup(
@@ -48,6 +51,5 @@ setup(
 )
 ```
 
-Of course, this is only relevant for developers; all going well, end users should never be aware of these details.
-
 See [`extern/manifest.csv`](extern/manifest.csv) for the list of vendored libraries and their versions.
+Licenses are available in the directory returned by the `licenses()` function.

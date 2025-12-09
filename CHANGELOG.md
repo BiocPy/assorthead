@@ -1,7 +1,21 @@
 # Changelog
 
-## Version 0.1 (development)
+## 0.1.4
 
-- Feature A added
-- FIX: nasty bug #1729 fixed
-- add your changes here!
+- Updated headers to match those in the corresponding R package.
+
+## 0.1.3
+
+- Updated headers to match those in the corresponding R package.
+
+## 0.1.2
+
+- Updated headers to match those in the corresponding R package.
+
+## 0.1.1
+
+- Updated headers to match those in the corresponding R package.
+
+## 0.1.0
+
+- Updated headers to match those in the corresponding R package.
