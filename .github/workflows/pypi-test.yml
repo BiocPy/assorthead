@@ -19,10 +19,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Set up Python 3.9
+      - name: Set up Python 3.14
         uses: actions/setup-python@v5
         with:
-          python-version: 3.9
+          python-version: 3.14
 
       - name: Install Python dependencies
         run: |
@@ -30,10 +30,11 @@ jobs:
           pip install flake8 pytest tox
 
       - name: Cache sources
+        id: cache-sources
         uses: actions/cache@v4
         with:
-          path: extern/sources
-          key: ${{ runner.os }}-${{ hashFiles('extern/fetch.py') }}
+          path: extern/_sources
+          key: sources-${{ hashFiles('extern/manifest.csv') }}
 
       - name: Fetch C++ dependencies
         run: | 
@@ -54,8 +55,8 @@ jobs:
         id: cache-sources
         uses: actions/cache@v4
         with:
-          path: extern/sources
-          key: ${{ runner.os }}-${{ hashFiles('extern/fetch.py') }}
+          path: extern/_sources
+          key: sources-${{ hashFiles('extern/manifest.csv') }}
 
       - name: Fetch C++ dependencies
         run: | 
@@ -76,6 +77,10 @@ jobs:
     if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags/')
     # alternatively, to publish when a GitHub Release is created, use the following rule:
     # if: github.event_name == 'release' && github.event.action == 'published'
+
+    permissions:
+      id-token: write  # Required for OIDC
+
     steps:
       - uses: actions/download-artifact@v4
         with:
@@ -84,7 +89,5 @@ jobs:
           name: artifact
           path: dist
 
-      - uses: pypa/gh-action-pypi-publish@v1.12.2
-        with:
-          user: __token__
-          password: ${{ secrets.PYPI_PASSWORD }}
+      - name: Publish to PyPi
+        uses: pypa/gh-action-pypi-publish@release/v1
