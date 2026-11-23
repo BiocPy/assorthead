@@ -1,0 +1,35 @@
+# This workflow will install Python dependencies, run tests and lint with a single version of Python
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-python-with-github-actions
+
+name: Publish to PyPI
+
+on:
+  push:
+    tags:
+      - "*"
+
+jobs:
+  upload_pypi:
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write  # Required for OIDC
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Cache sources
+        id: cache-sources
+        uses: actions/cache@v6
+        with:
+          path: extern/_sources
+          key: sources-${{ hashFiles('extern/manifest.csv') }}
+
+      - name: Fetch C++ dependencies
+        run: | 
+          cd extern
+          ./fetch.py
+
+      - name: Build source
+        run: pipx run build --sdist
+
+      - name: Publish to PyPi
+        uses: pypa/gh-action-pypi-publish@release/v1
