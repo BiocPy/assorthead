@@ -59,7 +59,7 @@ with open("manifest.csv", "r") as handle:
 
 ##################################################
 
-badbois = set([ "annoy", "hnswlib", "Eigen", "clrm1" ])
+badbois = set([ "annoy", "hnswlib", "Eigen" ])
 for i, man in enumerate(manifest):
     name = man.name
     url = man.url
@@ -180,34 +180,3 @@ def download_Eigen():
         handle.write(version)
 
 download_Eigen()
-
-###################################################
-
-def download_clrm1():
-    name = "clrm1"
-    for x in manifest:
-        if x.name == name:
-            version = x.version
-            url = x.url
-            break
-
-    if already_exists(name, version):
-        print(name + " (" + version + ") is already present")
-        return
-
-    tmpname = git_clone(name, url, version)
-    dest_include_path = os.path.join(dest, "include", name)
-    purge_directory(dest_include_path)
-    os.makedirs(dest_include_path)
-    shutil.copy2(os.path.join(tmpname, "package", "src", "clrm1.hpp"), dest_include_path)
-
-    dest_license_path = os.path.join(dest, "licenses", name)
-    purge_directory(dest_license_path)
-    os.makedirs(dest_license_path)
-    shutil.copy2(os.path.join(tmpname, "LICENSE"), dest_license_path)
-
-    vfile = get_version_file(name)
-    with open(vfile, "w") as handle:
-        handle.write(version)
-
-download_clrm1()
