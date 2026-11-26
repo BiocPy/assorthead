@@ -11,16 +11,27 @@ on:
 
 jobs:
   test:
-    name: Running tests
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ 'ubuntu-latest', 'macos-latest' ]
+        python-version: [ 'latest', 'oldest' ]
 
+    name: ${{ matrix.os }}, ${{ matrix.python-version }} Python
     steps:
       - uses: actions/checkout@v7
+
+      - name: Find supported Python
+        uses: BiocPy/find-supported-python@v1
+        id: find-version
+        with:
+          which: ${{ matrix.python-version }}
 
       - name: Set up Python
         uses: actions/setup-python@v7
         with:
-          python-version: '3.x'
+          python-version: ${{ steps.find-version.outputs.version }}
+          cache: 'pip'
 
       - name: Install Python dependencies
         run: |
